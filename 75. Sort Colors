@@ -1,0 +1,27 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        int left=0;
+        int mid=0;
+        int right=nums.length-1;
+        while(mid<=right)
+        {
+           if(nums[mid]==2)
+           {
+             int swap=nums[mid];
+             nums[mid]=nums[right];
+             nums[right]=swap;
+             right--;
+           } 
+           else if(nums[mid]==0)
+           {
+             int swap1=nums[mid];
+             nums[mid]=nums[left];
+             nums[left]=swap1;
+             left++;
+             mid++;
+           }
+           else
+              mid++;
+        } 
+    }
+}
