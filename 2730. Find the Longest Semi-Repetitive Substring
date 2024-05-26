@@ -1,0 +1,23 @@
+class Solution {
+    public int longestSemiRepetitiveSubstring(String s) {
+        int i=0, j=0, max1=0, c=0;
+        while(j<s.length()-1)
+        {
+           if(s.charAt(j)==s.charAt(j+1))
+               c++;
+           if(c>=2)
+           {
+            max1=Math.max(max1,j-i+1);
+            while(c>=2)
+            {
+                if(s.charAt(i)==s.charAt(i+1))
+                    c--;
+                i++;
+            }
+           }   
+            j++;    
+        }
+        return Math.max(max1,j-i+1);
+        }
+        
+    }
